@@ -1,0 +1,9 @@
+{% extends "penerbangan/layout.html" %} {% block body %}
+<h1>Penerbagan {{ penerbangan.id }}</h1>
+
+<ul>
+  <li>Asal: {{ penerbangan.asal }}</li>
+  <li>Tujuan: {{ penerbangan.tujuan }}</li>
+  <li>Durasi: {{ penerbangan.durasi }}</li>
+</ul>
+{% endblock %}

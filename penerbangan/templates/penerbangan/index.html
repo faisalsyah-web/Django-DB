@@ -1,0 +1,11 @@
+{% extends "penerbangan/layout.html" %} {% block body %}
+<h1>Penerbangan</h1>
+<ul>
+  {% for penerbangan in dftpenerbangan %}
+  <li>
+    Penerbagan {{ penerbangan.id }}: {{penerbangan.asal}} ke
+    {{penerbangan.tujuan}}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
