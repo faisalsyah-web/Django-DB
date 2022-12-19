@@ -20,3 +20,14 @@ class Penerbangan(models.Model):
 
     def __str__(self):
         return f"{self.id}: {self.asal} to {self.tujuan}"
+
+
+class Penumpang(models.Model):
+    namadpn = models.CharField(max_length=(64))
+    namablkg = models.CharField(max_length=(64))
+    dftrpenerbangan = models.ManyToManyField(
+        Penerbangan, blank=True, related_name="dftrpenumpang"
+    )
+
+    def __str__(self):
+        return f"{self.namadpn} {self.namablkg}"

@@ -3,9 +3,12 @@
 <ul>
   {% for penerbangan in dftpenerbangan %}
   <li>
-    Penerbagan {{ penerbangan.id }}: {{penerbangan.asal}} ke
-    {{penerbangan.tujuan}}
+    <a href="{% url 'penerbangan' penerbangan.id %}">
+      Penerbagan {{ penerbangan.id }}: {{penerbangan.asal}} ke
+      {{penerbangan.tujuan}}
+    </a>
   </li>
+
   {% endfor %}
 </ul>
 {% endblock %}

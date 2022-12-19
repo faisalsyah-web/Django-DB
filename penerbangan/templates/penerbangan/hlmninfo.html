@@ -6,4 +6,28 @@
   <li>Tujuan: {{ penerbangan.tujuan }}</li>
   <li>Durasi: {{ penerbangan.durasi }}</li>
 </ul>
+
+<h2>Penumpang</h2>
+
+<ul>
+  {% for penumpang in Penumpang %}
+  <li>{{ penumpang }}</li>
+  {% empty %}
+  <li>Tidak Ada Penumpang.</li>
+  {% endfor %}
+</ul>
+
+<h2>Tambah Penumpang</h2>
+
+<form action="{% url 'pesan' penerbangan.id %}" method="post">
+  {% csrf_token %}
+  <select name="penumpang">
+    {% for penumpang in bkn_penumpang %}
+      <option value="{{ penumpang.id }}">{{ penumpang }}</option>
+    {% endfor %}
+  </select>
+  <input type="submit" name="" id="">
+</form>
+
+<a href="{% url 'index' %}">Kembali ke Halaman Penerbagan</a>
 {% endblock %}
